@@ -1,54 +1,85 @@
-#
-#
-# ll = [0,1,2,3,4,5, "qw", True, False, [12, 'sw'], {"nn":55}]
-#
-#
-# for i in ll:
-#     count +=1
-#
-#     print('num', i)
-#
-# dict_data = {
-#     'name':'vadim',
-#     'age': 32,
-#     'weight': 94,
-#     "food": {"milk":["Sirniki", "milk", "protein", "tvorog"],
-#              "meat":["pelmeni", "meat", "sosiska v teste"]},
-#     "salary": [250, 320, 700, 1100, 1200, 1500, 2000]
-#              }
-# count = 0
-# key_list = []
-# for key, value in dict_data.items():
-#     key_list.append(key)
-#     print(key, '==', value)
-#     print('==================')
-#     print(key_list)
-# import time
-#
-# count = 0
-#
 # while True:
-#     time.sleep(.500)
-#     print('Hello!', count)
-#     count += 1
-#     if count == 10:
+#     input_data = input("Введите число 1: ")
+#     if not input_data.isnumeric():
+#         print("Вы ввели не число, попробуйте еще раз: ")
+#     elif not int(-32000) <= int(input_data) <= 32000:
+#         print("Ваше число не диапазоне. Попробуйте снова")
+#     else:
+#         print("Число в правильном диапазоне.")
 #         break
 
-# ------------------------------------------------------------------------
-# import sys
-#
-# print("Hello !!! Ahaha")
-#
-# params = sys.argv[1]
-#
-# print("params = ", params)
+# a = int(input("Введи первое число, от -32000 до 32000"))
+# if a < -32000:
+#     print("a < -32000")
+# elif a > 32000:
+#     print("a > 32000")
+#     int1 = a
+# print(a)
 
-import sys
-import argparse
+# a = 11111 * 1111111
+# print(a)
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--name', type=str, )
-parser.add_argument('--age', type=int, )
+# a = 42
+#
+# b = 4+2*(-2)
+#
+# print(a/b)
 
-args = parser.parse_args()
-ен
+# a = 2014**14
+# print(a)
+
+# a = 5
+# b = 2
+#
+# print(a//b)
+
+# import math
+# test = 0.3 + 0.3 + 0.3
+#
+# print(math.ceil(test))
+
+# print(5e-1)
+#
+# число*е3 = число * 1000 (10*10*10)
+# число*е-3 = число / 1000 (10*10*10)
+
+# a = 1.2345e-3
+# print(a)
+
+# print(2014.0**14)
+
+# print(7//3)
+
+# a = int(-1.6)
+# print(a)
+
+# a = 9**19
+# b = int(float(9**19))
+#
+# print(a-b)
+
+# test = int(input("Введи число: "))
+
+# name = input("Как тебя зовут? ")
+# print("Привет,", name + "!")
+#
+#
+#
+# SleepTimeMin = int(input())
+# Hours = SleepTimeMin // 60
+# Minutes = SleepTimeMin % 60
+# print(Hours)
+# print(Minutes)
+# print(int(360 // 60))
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Firefox()
+driver.get("http://www.python.org")
+assert "Python" in driver.title
+elem = driver.find_element_by_name("q")
+elem.send_keys("pycon")
+elem.send_keys(Keys.RETURN)
+assert "No results found." not in driver.page_source
+driver.close()
